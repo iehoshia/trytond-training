@@ -1,0 +1,4 @@
+trytond-training
+================
+
+Training Module
