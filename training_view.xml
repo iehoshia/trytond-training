@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<openerp>
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
     <data>
         <record model="ir.ui.view" id="course_theme_form">
             <field name="name">training.course.theme.form</field>
@@ -2959,4 +2961,4 @@
             id="training_participation_reassign_wiz_mi"
             groups="base.group_erp_manager" /> 
     </data>
-</openerp>
+</tryton>
