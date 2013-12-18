@@ -20,8 +20,7 @@ from trytond import backend
 
 STATE = [('draft', 'Draft'),
          ('opened', 'Opened'),
-         ('confirmed', 'Confirmed'),
-         ('in_progress', 'In Progress'),
+        ('confirmed', 'Confirmed'),
          ('closed', 'Closed'),
          ('cancelled', 'Cancelled')]
 
@@ -132,7 +131,6 @@ class TrainingOffer(ModelView, ModelSQL):
     state = fields.Selection(STATE,
                               'State', required=True)
     notification_note = fields.Text('Notification Note', help='This note will be show on notification emails')
-    is_certification = fields.Boolean('Is a certification?', help='Indicate is this Offer is a Certification Offer')
 
     @staticmethod
     def default_state():
