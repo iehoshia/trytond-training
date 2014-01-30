@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form string="Offer" col="8">
+    <label name="name"/>
+    <field name="name" xexpand="1"/>
+    <label name="code"/>
+    <field name="code"/>
+    <newline />
+    <notebook colspan="6">
+    	<page string="Courses" col="1" id="courses">
+            <field name="courses"/>
+        </page>
+    	<page string="Description" col="6" id="description">
+            <label name="type"/>
+    		<field name="type"/>
+    		<newline />
+    		<label name="description"/>
+    		<field name="description" colspan="6"/>
+    		<newline />
+    		<label name="objective"/>
+    		<field name="objective" colspan="6"/>
+    		<newline />
+    		<label name="requirements"/>
+    		<field name="requirements" colspan="6"/>
+        </page>
+    </notebook>
+    <newline />
+    <group col="2" colspan="2" id="states">
+		<label name="state"/>
+        <field name="state"/>
+	</group>
+	<group col="4" colspan="6" id="buttons">
+		<button name="cancel" string="Cancel"
+                        icon="tryton-cancel"/>
+		<button name="draft" string="Draft"/>
+		<button name="open" string="Confirm"
+                        icon="tryton-go-next"/>
+		<button name="done" string="Done"
+                        icon="tryton-go-next"/>
+	</group>
+</form>

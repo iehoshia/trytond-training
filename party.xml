@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+
+<!-- PARTY -->
+
+        <record model="ir.ui.view" id="view_party_form">
+            <field name="model">party.party</field>
+            <field name="inherit" ref="party.party_view_form"/>
+            <field name="type">form</field>
+            <field name="name">party_form</field>
+        </record>
+
+
+<!-- Add the Lastname and SSN (ref) field to the tree view of the party -->
+
+        <record model="ir.ui.view" id="party_view_tree">
+            <field name="model">party.party</field>
+            <field name="inherit" ref="party.party_view_tree"/>
+            <field name="type">tree</field>
+            <field name="name">party_tree</field>
+                
+        </record>
+
+
+<!-- PARTY CONTACT INFO - RELATIVES -->
+
+        <record model="ir.ui.view" id="view_party_address_form">
+            <field name="model">party.address</field>
+            <field name="inherit" ref="party.address_view_form"/>
+            <field name="type">form</field>
+            <field name="name">party_address_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="address_view_tree">
+            <field name="model">party.address</field>
+            <field name="inherit" ref="party.address_view_tree"/>
+            <field name="type">tree</field>
+            <field name="name">party_address_tree</field>
+        </record>
+
+<!-- STUDENT DATA -->
+
+        <record model="ir.ui.view" id="training_student_form">
+            <field name="model">training.student</field>
+            <field name="type">form</field>
+            <field name="name">student_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="training_student_tree">
+            <field name="model">training.student</field>
+            <field name="type">tree</field>
+            <field name="name">student_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_training_student_view">
+            <field name="name">Student</field>
+            <field name="res_model">training.student</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="action_training_student_view_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="training_student_tree"/>
+            <field name="act_window" ref="action_training_student_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="action_training_student_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="training_student_form"/>
+            <field name="act_window" ref="action_training_student_view"/>
+        </record>
+
+        <menuitem action="action_training_student_view"
+            id="menu_training_student_view" parent="training.students_menu"
+            sequence="10"/>
+
+<!-- PARTY NOTE -->
+
+        <record model="ir.ui.view" id="view_party_note_form">
+            <field name="model">party.notes</field>
+            <field name="type">form</field>
+            <field name="name">party_note_form</field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_party_note_view">
+            <field name="model">party.notes</field>
+            <field name="type">tree</field>
+            <field name="name">party_note_tree</field>
+        </record>
+
+
+<!-- STUDENT NOTE -->
+
+        <record model="ir.ui.view" id="view_student_note_form">
+            <field name="model">student.note</field>
+            <field name="type">form</field>
+            <field name="name">student_note_form</field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_student_note_view">
+            <field name="model">student.note</field>
+            <field name="type">tree</field>
+            <field name="name">student_note_tree</field>
+        </record>
+
+            
+<!-- FACULTY DATA -->
+
+        <record model="ir.ui.view" id="training_faculty_form">
+            <field name="model">training.faculty</field>
+            <field name="type">form</field>
+            <field name="name">faculty_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="training_faculty_tree">
+            <field name="model">training.faculty</field>
+            <field name="type">tree</field>
+            <field name="name">faculty_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_training_faculty_view">
+            <field name="name">Faculty</field>
+            <field name="res_model">training.faculty</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="action_training_faculty_view_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="training_faculty_tree"/>
+            <field name="act_window" ref="action_training_faculty_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="action_training_faculty_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="training_faculty_form"/>
+            <field name="act_window" ref="action_training_faculty_view"/>
+        </record>
+
+        <menuitem action="action_training_faculty_view"
+            id="menu_training_faculty_view" parent="training.training_conf_menu"
+            sequence="10"/>
+  
+    </data>
+</tryton>

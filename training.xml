@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+<!-- Create the TRAINING icon -->
+<!--
+        <record model="ir.ui.icon" id="gnuhealth_icon">
+            <field name="name">training</field>
+            <field name="path">icons/training.svg</field>
+        </record> -->
+
+<!-- Add other relevant icons -->
+<!-- 
+        <record model="ir.ui.icon" id="gnuhealth_disease_icon">
+            <field name="name">gnuhealth-disease</field>
+            <field name="path">icons/face-sick.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_procedure_icon">
+            <field name="name">gnuhealth-procedure</field>
+            <field name="path">icons/hand-scalpel.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_medicament_icon">
+            <field name="name">gnuhealth-medicament</field>
+            <field name="path">icons/medicament.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_appointment_icon">
+            <field name="name">gnuhealth-appointment</field>
+            <field name="path">icons/appointment.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_center_icon">
+            <field name="name">gnuhealth-health-center</field>
+            <field name="path">icons/health-center.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_physician_icon">
+            <field name="name">gnuhealth-physician</field>
+            <field name="path">icons/doctor.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_patient_icon">
+            <field name="name">gnuhealth-patient</field>
+            <field name="path">icons/patient.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_prescription_icon">
+            <field name="name">gnuhealth-prescription</field>
+            <field name="path">icons/prescription.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_report_icon">
+            <field name="name">gnuhealth-report</field>
+            <field name="path">icons/report.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_demography_icon">
+            <field name="name">gnuhealth-demography</field>
+            <field name="path">icons/demography.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_list_icon">
+            <field name="name">gnuhealth-list</field>
+            <field name="path">icons/tryton-list.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_open_icon">
+            <field name="name">gnuhealth-open</field>
+            <field name="path">icons/tryton-open.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_preferences_icon">
+            <field name="name">gnuhealth-preferences</field>
+            <field name="path">icons/tryton-preferences.svg</field>
+        </record>
+        -->
+
+<!-- Initial Menu -->
+        <menuitem name="Training" id="training_menu"/>
+        <menuitem name="Students" id="students_menu"
+            parent="training_menu" sequence="10"/>
+        <menuitem name="Academic" id="academic_menu"
+            parent="training_menu" sequence="20"/>
+        <menuitem name="Configuration" id="training_conf_menu"
+            parent="training_menu" sequence="999"/>
+
+<!-- Training Course Category -->
+
+        <record model="ir.ui.view" id="course_category_view_form">
+            <field name="model">training.course.category</field>
+            <field name="type">form</field>
+            <field name="inherit" eval="None"/>            
+            <field name="name">course_category_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="course_category_view_tree">
+            <field name="model">training.course.category</field>
+            <field name="type">tree</field>
+            <field name="inherit" eval="None"/>
+            <field name="name">course_category_tree</field>
+        </record>
+        
+        <record model="ir.action.act_window" id="training_action_course_category">
+            <field name="name">Course Category</field>
+            <field name="res_model">training.course.category</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_course_category_tree_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="course_category_view_tree"/>
+            <field name="act_window" ref="training_action_course_category"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_course_category_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="course_category_view_form"/>
+            <field name="act_window" ref="training_action_course_category"/>
+        </record>
+
+        <menuitem action="training_action_course_category"
+            id="training_course_category" parent="academic_menu"/>
+
+<!-- Training Course Type -->
+
+        <record model="ir.ui.view" id="course_type_view_form">
+            <field name="model">training.course.type</field>
+            <field name="type">form</field>
+            <field name="inherit" eval="None"/>            
+            <field name="name">course_type_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="course_type_view_tree">
+            <field name="model">training.course.type</field>
+            <field name="type">tree</field>
+            <field name="inherit" eval="None"/>
+            <field name="name">course_type_tree</field>
+        </record>
+        
+        <record model="ir.action.act_window" id="training_action_course_type">
+            <field name="name">Course Type</field>
+            <field name="res_model">training.course.type</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_course_type_tree_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="course_type_view_tree"/>
+            <field name="act_window" ref="training_action_course_type"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_course_type_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="course_type_view_form"/>
+            <field name="act_window" ref="training_action_course_type"/>
+        </record>
+
+        <menuitem action="training_action_course_type"
+            id="training_course_type" parent="academic_menu"/>
+
+<!-- Training Course -->
+
+        <record model="ir.ui.view" id="course_view_form">
+            <field name="model">training.course</field>
+            <field name="type">form</field>
+            <field name="inherit" eval="None"/>            
+            <field name="name">course_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="course_view_tree">
+            <field name="model">training.course</field>
+            <field name="type">tree</field>
+            <field name="inherit" eval="None"/>
+            <field name="name">course_tree</field>
+        </record>
+        
+        <record model="ir.action.act_window" id="training_action_course">
+            <field name="name">Course</field>
+            <field name="res_model">training.course</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_course_tree_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="course_view_tree"/>
+            <field name="act_window" ref="training_action_course"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_course_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="course_view_form"/>
+            <field name="act_window" ref="training_action_course"/>
+        </record>
+
+        <menuitem action="training_action_course"
+            id="training_course" parent="academic_menu"/>
+
+<!-- Training Offer -->
+
+        <record model="ir.ui.view" id="offer_view_form">
+            <field name="model">training.offer</field>
+            <field name="type">form</field>
+            <field name="inherit" eval="None"/>            
+            <field name="name">offer_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="offer_view_tree">
+            <field name="model">training.offer</field>
+            <field name="type">tree</field>
+            <field name="inherit" eval="None"/>
+            <field name="name">offer_tree</field>
+        </record>
+        
+        <record model="ir.action.act_window" id="action_offer">
+            <field name="name">Offer</field>
+            <field name="res_model">training.offer</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_offer_tree_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="offer_view_tree"/>
+            <field name="act_window" ref="action_offer"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_offer_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="offer_view_form"/>
+            <field name="act_window" ref="action_offer"/>
+        </record>
+
+        <menuitem action="action_offer"
+            id="training_offer" parent="academic_menu"/>   
+
+    </data>
+</tryton>

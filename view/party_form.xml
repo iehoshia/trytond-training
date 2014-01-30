@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<data>
+	<xpath
+    	expr="/form/notebook/page[@id=&quot;general&quot;]"
+        position="before">
+		
+		<page string="Training" id="party_training">
+
+			<group col="12" colspan="4" id="party_specs">
+            	<label name="is_person"/>
+                <field name="is_person"/>
+                <label name="is_student"/>
+                <field name="is_student"/>
+                <label name="is_faculty"/>
+                <field name="is_faculty"/>
+                <label name="is_institution"/>
+                <field name="is_institution"/>
+            </group>
+            
+            <newline/>
+
+            <group colspan="4" id="person_details" states="{'invisible': Not(Bool(Eval('is_person')))}">
+            	
+            	<group id="person_demographics" string="Demographics">
+                    <label name="dob"/>
+                    <field name="dob"/>
+                    <label name="profession"/>
+                    <field name="profession"/>
+                    <label name="sex"/>
+                    <field name="sex"/>
+                    <label name="marital_status"/>
+                    <field name="marital_status"/>
+                    <label name="citizenship"/>
+                    <field name="citizenship"/>
+                    <label name="residence"/>
+                    <field name="residence"/>
+                </group>
+
+                <group string="Picture" id="person_picture">
+                	<field xfill="0" xexpand="1" name="photo" img_width="200" img_height="200"
+                    	height="200" width="200" widget="image"/>
+                </group>
+            
+            </group>
+ 
+ 			<newline/>
+
+			<group col="6" colspan="2" id="other_party_specs">
+            	<label name="activation_date"/>
+                <field name="activation_date"/>
+                <label name="internal_user"/>
+                <field name="internal_user"/>
+            </group>
+
+            <newline/>
+            
+            <group col="1" id ="notes">
+            	<field name="notes"/>
+            </group>
+		
+		</page>
+
+    </xpath>
+    
+    <xpath expr="/form/field[@name=&quot;name&quot;]"
+        position="after">
+        <label name="lastname"/>
+        <field name="lastname"/>
+		<label name="dpi"/>
+        <field name="dpi"/>        
+     </xpath>
+
+</data>    

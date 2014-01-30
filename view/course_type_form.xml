@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form string="Course Type">
+    <label name="name"/>
+    <field name="name"/>
+    <label name="active"/>
+    <field name="active"/>
+    <newline />
+    <label name="objective"/>
+    <field name="objective" colspan="6"/>
+    <newline />
+    <label name="description"/>
+    <field name="description" colspan="6"/>
+</form>

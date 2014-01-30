@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- This file is part of the sale_printing module for Tryton.
+The COPYRIGHT file at the top level of this repository contains
+the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="product.category" id="cat_offer">
+            <field name="name">OFFERS</field>
+        </record>
+    </data>
+</tryton>
+
